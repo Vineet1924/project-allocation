@@ -16,7 +16,7 @@ export class RequestCardComponent {
   group_name: string = '';
   student_name: string = '';
   Message: string = undefined;
-  
+
   constructor(
     private groupService: GroupService,
   ) { }
@@ -28,7 +28,7 @@ export class RequestCardComponent {
   }
 
   async onAccept(): Promise<void> {
-    if(this.student.group != null || this.student.group != undefined) {
+    if (this.student.group != null || this.student.group != undefined) {
       this.Message = "You are already in the group.";
       return;
     }
@@ -43,6 +43,7 @@ export class RequestCardComponent {
     }, 4000);
 
     try {
+      console.log(this.requestData);
       const data = await this.groupService.approveRequest(this.requestData).toPromise();
       this.closeModal.emit(true);
     } catch (error) {

@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { GroupService } from '../../service/group.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Student } from '../../interface/student';
+import { UtilService } from '../../service/util.service';
 
 @Component({
   selector: 'app-join-group-tab',
@@ -17,14 +18,27 @@ export class JoinGroupTabComponent {
 
   constructor(
     private groupService: GroupService,
+    private util_service: UtilService,
   ) { }
 
   async ngOnInit(): Promise<void> {
+    await this.getStoredCookie();
     await this.groupService.getAllGroup().subscribe((data) => {
       console.log(data);
+      console.log(this.student);
       this.groups = data;
-      this.filteredGroups = [...this.groups];
+      this.filteredGroups = this.groups;
+      if (this.student.group != null || this.student.group != undefined) {
+        this.groups = this.groups.filter(group => group.id !== this.student.group.id);
+        this.filteredGroups = [...this.groups];
+      }
     });
+  }
+
+  async getStoredCookie(): Promise<any> {
+    this.student = await this.util_service.load_profile(
+      localStorage.getItem('id')
+    );
   }
 
   onSearch(): void {

@@ -8,6 +8,7 @@ import { ProfileService } from '../../service/profile.service';
 import { CustomProjectModalComponent } from '../../components/custom-project-modal/custom-project-modal.component';
 import { FacultyService } from '../../service/faculty.service';
 import { Faculty } from '../../interface/faculty';
+import { UtilService } from '../../service/util.service';
 
 @Component({
   selector: 'app-faculty-choice-tab',
@@ -15,13 +16,13 @@ import { Faculty } from '../../interface/faculty';
   styleUrl: './faculty-choice-tab.component.css'
 })
 export class FacultyChoiceTabComponent {
-  @Input() student : Student;
+  @Input() student: Student;
   group: Group;
   errorMessage: string = undefined;
   successMessage: string = undefined;
   displayedColumns: string[] = ['no', 'project_id', 'name', 'actions'];
   dataSource: Faculty[];
-  facultyChoices: any[];
+  facultyChoices: any[] = [];
   filterFaculty: any[];
 
   constructor(
@@ -29,22 +30,20 @@ export class FacultyChoiceTabComponent {
     private groupService: GroupService,
     private profileService: ProfileService,
     private facultySerivce: FacultyService,
+    private util_service: UtilService,
   ) { }
 
   async ngOnInit(): Promise<void> {
-    await this.loadProfile(this.student.id);
+    await this.getStoredCookie();
     await this.loadFaculty();
     await this.loadGroup();
     await this.loadFacultyChoice();
   }
 
-  async loadProfile(uid: string): Promise<void> {
-    try {
-      const data = await this.profileService.getProfile(uid).toPromise();
-      this.student = data;
-    } catch (error) {
-      console.log("Error while loading the profile : " + error);
-    }
+  async getStoredCookie(): Promise<any> {
+    this.student = await this.util_service.load_profile(
+      localStorage.getItem('id')
+    );
   }
 
   async loadFaculty(): Promise<void> {
@@ -85,14 +84,21 @@ export class FacultyChoiceTabComponent {
 
   async loadFacultyChoice() {
     try {
-      const data = await this.facultySerivce.getAllFacultyChoices(this.group.id).toPromise().then((data) => {
+      console.log("Called");
+      console.log(this.group.id);
+      const data = await this.facultySerivce.getAllFacultyChoices(this.group.id).toPromise();
+      console.log(data);
+      if (data !== null) {
         this.facultyChoices = data.sort((a, b) => a.priority - b.priority);
         console.log(this.facultyChoices);
-      });
+      } else {
+        console.log("No data received from the server");
+      }
     } catch (error) {
       console.log("Error while loading choices : " + error);
     }
   }
+
 
   async addChoice(element: any) {
     console.log(element);
@@ -114,6 +120,7 @@ export class FacultyChoiceTabComponent {
       await this.loadFacultyChoice();
     } catch (error) {
       console.log("Error while saving choice : " + error);
+      await this.loadFacultyChoice();
     }
   }
 
@@ -150,6 +157,7 @@ export class FacultyChoiceTabComponent {
       await this.loadFacultyChoice();
     } catch (error) {
       console.log("Error while changing priority : " + error);
+      await this.loadFacultyChoice();
       return;
     }
   }
@@ -171,6 +179,7 @@ export class FacultyChoiceTabComponent {
       await this.loadFacultyChoice();
     } catch (error) {
       console.log("Error while changing priority : " + error);
+      await this.loadFacultyChoice();
       return;
     }
   }

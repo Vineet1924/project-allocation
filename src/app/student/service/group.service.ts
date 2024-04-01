@@ -45,7 +45,7 @@ export class GroupService {
   }
 
   getStudentRequested(groupId: string): Observable<any> {
-    const url = 'http://localhost:8080/api/request/group/studentRequested/'+ groupId;
+    const url = 'http://localhost:8080/api/request/group/studentRequested/' + groupId;
     return this.http.get<any>(url, {});
   }
 
@@ -65,12 +65,12 @@ export class GroupService {
   }
 
   approveRequest(data: any): Observable<any> {
-    const url = 'http://localhost:8080/api/request/' + data.group.student.id + '/' + data.requestId + '/approve/' + data.group.id + '/' + data.student.id;
+    const url = 'http://localhost:8080/api/request/' + data.group.student.id + '/approve/' + data.group.id + '/' + data.student.id;
     return this.http.post<any>(url, {});
   }
 
   rejectRequest(data: any): Observable<any> {
-    const url = 'http://localhost:8080/api/request/' + data.group.student.id + '/' + data.requestId + '/reject/' + data.group.id + '/' + data.student.id;
+    const url = 'http://localhost:8080/api/request/' + data.group.student.id + '/reject/' + data.group.id + '/' + data.student.id;
     return this.http.post<any>(url, {});
   }
 }

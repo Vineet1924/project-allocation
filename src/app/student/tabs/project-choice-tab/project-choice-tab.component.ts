@@ -6,6 +6,7 @@ import { ProfileService } from '../../service/profile.service';
 import { CustomProjectModalComponent } from '../../components/custom-project-modal/custom-project-modal.component';
 import { Student } from '../../interface/student';
 import { Group } from '../../interface/group';
+import { UtilService } from '../../service/util.service';
 
 @Component({
   selector: 'app-project-choice-tab',
@@ -13,13 +14,13 @@ import { Group } from '../../interface/group';
   styleUrl: './project-choice-tab.component.css'
 })
 export class ProjectChoiceTabComponent {
-  @Input() student : Student;
+  @Input() student: Student;
   group: Group;
   errorMessage: string = undefined;
   successMessage: string = undefined;
   displayedColumns: string[] = ['no', 'project_id', 'name', 'actions'];
   dataSource: any[];
-  projectChoices: any[];
+  projectChoices: any[] = [];
   filterProject: any[];
 
   constructor(
@@ -27,23 +28,20 @@ export class ProjectChoiceTabComponent {
     private groupService: GroupService,
     private dailog: MatDialog,
     private profileService: ProfileService,
+    private util_service: UtilService,
   ) { }
 
   async ngOnInit(): Promise<void> {
-    await this.loadProfile(this.student.id);
+    await this.getStoredCookie();
     await this.loadProject();
     await this.loadGroup();
     await this.loadProjectChoice();
   }
 
-  async loadProfile(uid: string): Promise<void> {
-    try {
-      const data = await this.profileService.getProfile(uid).toPromise();
-      this.student = data;
-      console.log(data);
-    } catch (error) {
-      console.log("Error while loading the profile : " + error);
-    }
+  async getStoredCookie(): Promise<any> {
+    this.student = await this.util_service.load_profile(
+      localStorage.getItem('id')
+    );
   }
 
   async loadProject(): Promise<void> {
@@ -61,6 +59,7 @@ export class ProjectChoiceTabComponent {
     try {
       const data = await this.groupService.getGroup(this.student.group.id).toPromise();
       this.group = data;
+      console.log(this.group);
     } catch (error) {
       console.log("Error while loading group : " + error);
     }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginServiceService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getUsers(email: string): Observable<any> {
     const url = 'http://localhost:8080/api/users/email/' + email;

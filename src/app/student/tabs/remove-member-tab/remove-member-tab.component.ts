@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { GroupService } from '../../service/group.service';
 import { Student } from '../../interface/student';
 import { Group } from '../../interface/group';
+import { UtilService } from '../../service/util.service';
 
 @Component({
   selector: 'app-remove-member-tab',
@@ -17,10 +18,18 @@ export class RemoveMemberTabComponent {
 
   constructor(
     private groupService: GroupService,
+    private util_service: UtilService,
   ) { }
 
   async ngOnInit(): Promise<void> {
+    await this.getStoredCookie();
     await this.loadGroup();
+  }
+
+  async getStoredCookie(): Promise<any> {
+    this.student = await this.util_service.load_profile(
+      localStorage.getItem('id')
+    );
   }
 
   async loadGroup() {

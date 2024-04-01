@@ -1,66 +1,67 @@
 .main-container {
-    position: absolute;
-    top: 130px;
-    width: 100%;
-    height: 85%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-  }
-  
-  .search-bar {
-    width: 400px;
-    height: 50px;
-    position: relative;
-    float: right;
-    background-color: #1e1d25;
-    border-radius: 5px;
-  }
-  
-  #searchInput {
-    width: 100%;
-    border-radius: 5px;
-    height: 100%;
-    background-color: #1e1d25;
-  }
-  
-  .search-icon {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    height: 100%;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #7f8497;
-  }
-  
-  .search-container {
-    position: fixed;
-    top: 90px;
-    right: 25px;
-    width: 100%;
-    height: 60px;
-    margin-bottom: 4px;
-  }
-  
-  .filter-tile {
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
-    background-color: #1e1d25;
-    border-radius: 5px;
-    float: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .filter-tile mat-icon {
-    font-size: 26px;
-    color: #7f8497;
-  }
-  
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  height: 85%;
+  display: flex;
+  padding-left: 6px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.search-bar {
+  width: 400px;
+  height: 50px;
+  position: relative;
+  float: right;
+  margin-right: 18px;
+  background-color: #1e1d25;
+  border-radius: 5px;
+}
+
+#searchInput {
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+  background-color: #1e1d25;
+}
+
+.search-icon {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7f8497;
+}
+
+.search-container {
+  position: fixed;
+  top: 90px;
+  right: 25px;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 4px;
+}
+
+.filter-tile {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  background-color: #1e1d25;
+  border-radius: 5px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filter-tile mat-icon {
+  font-size: 26px;
+  color: #7f8497;
+}

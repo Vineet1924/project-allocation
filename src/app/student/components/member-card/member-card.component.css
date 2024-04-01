@@ -1,73 +1,73 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    max-width: 170px;
-    min-width: 170px;
-  }
-  
-  .image {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: transparent;
-    justify-content: center;
-    align-items: center;
-    object-fit: cover;
-  }
-  
-  img {
-    width: 120px;
-    height: 120px;
-  }
-  
-  #name {
-    position: relative;
-    letter-spacing: 2px;
-    top: 30px;
-    font-weight: 600;
-    color: #7f8497;
-    font-family: poppins;
-    font-size: 15px;
-  }
-  
-  #rollNumber {
-    position: relative;
-    letter-spacing: 2px;
-    top: 10px;
-    font-weight: 600;
-    color: #7f8497;
-    font-family: poppins;
-    font-size: 15px;
-  }
-  
-  h4 {
-    position: relative;
-    margin-top: 3px;
-    bottom: 6px;
-    color: #7f8497;
-    font-family: poppins;
-    font: 15px;
-  }
-  
-  .remove {
-    cursor: pointer;
-    float: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: red;
-  }
-  
-  h1 {
-    color: white;
-    position: relative;
-    top: 6.6px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  max-width: 170px;
+  min-width: 170px;
+}
+
+.image {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+}
+
+#name {
+  position: relative;
+  letter-spacing: 2px;
+  top: 10px;
+  font-weight: 600;
+  color: #7f8497;
+  font-family: poppins;
+  font-size: 15px;
+}
+
+#rollNumber {
+  position: relative;
+  letter-spacing: 2px;
+  top: 6px;
+  font-weight: 600;
+  color: #7f8497;
+  font-family: poppins;
+  font-size: 15px;
+}
+
+h4 {
+  position: relative;
+  margin-top: 1px;
+  bottom: 6px;
+  color: #7f8497;
+  font-family: poppins;
+  font: 15px;
+  font-size: large;
+}
+
+.remove {
+  cursor: pointer;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+h3 {
+  color: #7f8497;
+  font-size: large;
+  margin: 0px;
+}

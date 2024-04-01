@@ -9,8 +9,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     overflow-y: scroll;
+    scrollbar-width: none;
   }
-  
+
   .image {
     width: 70px;
     height: 70px;
@@ -19,12 +20,12 @@
     left: 30px;
     object-fit: cover;
   }
-  
+
   img {
     width: 80px;
     height: 80px;
   }
-  
+
   .data {
     max-width: 120px;
     min-width: 120px;
@@ -32,14 +33,14 @@
     left: 50px;
     top: 8px;
   }
-  
+
   .operation {
     width: 100px;
     height: 100%;
     position: relative;
     left: 120px;
   }
-  
+
   .accept {
     width: 100%;
     background-color: #5bd850;
@@ -52,11 +53,11 @@
     font-size: 12px;
     margin: 8px;
   }
-  
+
   .accept:hover {
     cursor: pointer;
   }
-  
+
   .reject {
     width: 100%;
     background-color: transparent;
@@ -67,12 +68,12 @@
     font-size: 12px;
     margin: 8px;
   }
-  
+
   h4 {
     color: #7f8497;
     font-family: poppins;
   }
-  
+
   .success {
     position: fixed;
     top: 22px;
@@ -91,18 +92,18 @@
     border: 1px solid #84d65a;
     box-shadow: 0px 0px 5px -3px #111;
   }
-  
+
   .success__icon {
     width: 20px;
     height: 20px;
     transform: translateY(-2px);
     margin-right: 8px;
   }
-  
+
   .success__icon path {
     fill: #84d65a;
   }
-  
+
   app-error-message {
     position: fixed;
     top: 10px;
@@ -114,18 +115,18 @@
     font-size: 14px;
     color: #2b641e;
   }
-  
+
   .success__close {
     width: 20px;
     height: 20px;
     cursor: pointer;
     margin-left: auto;
   }
-  
+
   .success__close path {
     fill: #2b641e;
   }
-  
+
   .error {
     position: fixed;
     top: -10px;
@@ -148,32 +149,31 @@
     top: 90px;
     right: 15px;
   }
-  
+
   .error__icon {
     width: 20px;
     height: 20px;
     transform: translateY(-2px);
     margin-right: 8px;
   }
-  
+
   .error__icon path {
     fill: #fff;
   }
-  
+
   .error__title {
     font-weight: 500;
     font-size: 14px;
     color: #fff;
   }
-  
+
   .error__close {
     width: 20px;
     height: 20px;
     cursor: pointer;
     margin-left: auto;
   }
-  
+
   .error__close path {
     fill: #fff;
   }
-  

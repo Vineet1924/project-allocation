@@ -1,5 +1,8 @@
 <app-success-message [Message]="successMessage"></app-success-message>
 <app-error-message [Message]="errorMessage"></app-error-message>
+<div class="center-container" *ngIf="student.group.id == null || student.group.id == undefined">
+  <h1>You are not in any group</h1>
+</div>
 <div class="search-container">
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search for a faculty..." (input)="searchFaculties($event)" />
@@ -15,50 +18,50 @@
           <th mat-header-cell *matHeaderCellDef>No.</th>
           <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
         </ng-container>
-  
+
         <ng-container matColumnDef="project_id">
           <th mat-header-cell *matHeaderCellDef>Faculty id</th>
           <td mat-cell *matCellDef="let element">{{element.id}}</td>
         </ng-container>
-  
+
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef>Name</th>
           <td mat-cell *matCellDef="let element">{{element.name}}</td>
         </ng-container>
-  
+
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let element">
             <button mat-flat-button color="primary" (click)="addChoice(element)">+ Add</button>
           </td>
         </ng-container>
-  
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </div>
-  
+
     <h3>
       Choices
     </h3>
-  
+
     <div class="table-data">
       <table mat-table [dataSource]="facultyChoices" class="mat-elevation-z8 demo-table">
         <ng-container matColumnDef="no">
           <th mat-header-cell *matHeaderCellDef>No.</th>
           <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
         </ng-container>
-  
+
         <ng-container matColumnDef="project_id">
           <th mat-header-cell *matHeaderCellDef>Faculty id</th>
           <td mat-cell *matCellDef="let element">{{element.faculty.id}}</td>
         </ng-container>
-  
+
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef>Name</th>
           <td mat-cell *matCellDef="let element">{{element.faculty.name}}</td>
         </ng-container>
-  
+
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let element; let i = index">
@@ -71,10 +74,10 @@
             <button mat-button color="warn" (click)="removeChoice(element)" class="remove">Remove</button>
           </td>
         </ng-container>
-  
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </div>
   </div>
-  
+

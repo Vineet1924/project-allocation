@@ -25,21 +25,20 @@ export class GroupTabComponent {
   isCreator: boolean = false;
   facultyChoices: any[];
 
+
   constructor(
     private dailog: MatDialog,
     private util_service: UtilService,
     private group_service: GroupService,
-    private faculty_service: FacultyService
-  ) {}
+    private faculty_service: FacultyService,
+  ) { }
 
   async ngOnInit(): Promise<void> {
     await this.getStoredCookie();
     this.group = await this.util_service.load_group(this.student.group.id);
     if (this.group != null) {
       this.isGroupMember = true;
-      this.dataSource = await this.util_service.load_project_choice(
-        this.student.group.id
-      );
+      this.dataSource = await this.util_service.load_project_choice(this.student.group.id);
       await this.loadFacultyChoice();
     }
     if (this.student.id == this.group.student.id) {
@@ -49,28 +48,23 @@ export class GroupTabComponent {
 
   async leaveGroup(): Promise<void> {
     try {
-      await this.group_service
-        .leaveGroup(this.student.id, this.student.group.id)
-        .toPromise();
+      await this.group_service.leaveGroup(this.student.id, this.student.group.id).toPromise();
     } catch (error) {
       this.getStoredCookie();
       this.isGroupMember = false;
       this.leave.emit();
-      console.log('Error while leaving the group : ' + error);
+      console.log("Error while leaving the group : " + error);
     }
   }
 
   async loadFacultyChoice() {
     try {
-      const data = await this.faculty_service
-        .getAllFacultyChoices(this.group.id)
-        .toPromise()
-        .then((data) => {
-          this.facultyChoices = data.sort((a, b) => a.priority - b.priority);
-        });
+      const data = await this.faculty_service.getAllFacultyChoices(this.group.id).toPromise().then((data) => {
+        this.facultyChoices = data.sort((a, b) => a.priority - b.priority);
+      });
       console.log(this.facultyChoices);
     } catch (error) {
-      console.log('Error while loading choices : ' + error);
+      console.log("Error while loading choices : " + error);
     }
   }
 
@@ -78,7 +72,7 @@ export class GroupTabComponent {
     const dialogRef = this.dailog.open(GroupRequestComponent, {
       width: '700px',
       height: '500px',
-      data: this.student,
+      data: this.student
     });
 
     dialogRef.afterClosed().subscribe(async () => {
@@ -86,11 +80,9 @@ export class GroupTabComponent {
       this.group = await this.util_service.load_group(this.student.group.id);
       if (this.group != null) {
         this.isGroupMember = true;
-        this.dataSource = await this.util_service.load_project_choice(
-          this.student.group.id
-        );
+        this.dataSource = await this.util_service.load_project_choice(this.student.group.id);
       }
-    });
+    })
   }
 
   async getStoredCookie(): Promise<any> {
@@ -110,9 +102,7 @@ export class GroupTabComponent {
       this.group = await this.util_service.load_group(this.student.group.id);
       if (this.group != null) {
         this.isGroupMember = true;
-        this.dataSource = await this.util_service.load_project_choice(
-          this.student.group.id
-        );
+        this.dataSource = await this.util_service.load_project_choice(this.student.group.id);
       }
     });
   }

@@ -18,7 +18,7 @@ export class HomeTabComponent {
   cpi: string;
   students: any[];
 
-  constructor(private util_service: UtilService, private dailog: MatDialog) {}
+  constructor(private util_service: UtilService, private dailog: MatDialog) { }
 
   displayedColumns: string[] = ['no', 'student_id', 'name', 'email', 'cpi'];
 
@@ -32,7 +32,6 @@ export class HomeTabComponent {
     this.student = await this.util_service.load_profile(
       localStorage.getItem('id')
     );
-
     if (this.student.result_list && this.student.result_list.length > 0) {
       const lastResult =
         this.student.result_list[this.student.result_list.length - 1];
@@ -53,7 +52,7 @@ export class HomeTabComponent {
       data: rowData,
     });
 
-    dialogRef.afterClosed().subscribe(() => {});
+    dialogRef.afterClosed().subscribe(() => { });
   }
 
   openFlowModal(): void {
@@ -62,6 +61,6 @@ export class HomeTabComponent {
       height: '700px',
     });
 
-    dailogRef.afterClosed().subscribe(() => {});
+    dailogRef.afterClosed().subscribe(() => { });
   }
 }

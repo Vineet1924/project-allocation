@@ -19,6 +19,7 @@ export class GroupCardComponent {
 
   ngOnInit(): void {
     this.studentList = this.group.studentList;
+    console.log(this.Student);
   }
 
   async sendRequest(): Promise<void> {
