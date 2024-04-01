@@ -1,0 +1,97 @@
+.container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  align-items: center;
+  overflow: auto; /* Enable scrolling */
+
+  background-color: transparent;
+}
+
+/* Hide scrollbar for webkit browsers */
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+
+button {
+  width: 250px;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+  font-family: Poppins, sans-serif;
+  background-color: #F9D88B; /* Green background */
+  color: #1e1d25; /* White text */
+  border: 1px solid #1e1d25; /* Remove border */
+  cursor: pointer; /* Add cursor pointer */
+  transition: background-color 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  font-weight: bold;
+}
+
+
+.comic-button {
+  width: max-content;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  background-color: #F9D88B;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.comic-button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  box-shadow: 5px 5px 0px #F9D88B;
+}
+
+.comic-button:active {
+  background-color: #fcf414;
+  box-shadow: none;
+  transform: translateY(4px);
+}
+
+
+/* Hover effect */
+button:hover {
+  color: white;
+  background-color: #1e1d25; /* Darker green */
+}
+
+/* Active effect */
+button:active {
+  background-color: #3e8e41; /* Darker color when clicked */
+}
+
+table{
+  width: 90%;
+  height: 100%;
+  margin: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-top: 10px;
+
+}
+tr{
+  height: min-content;
+  
+}
+
+td{
+  text-align: center; /* Align content horizontally to the center */
+  vertical-align: middle; /* Align content vertically to the middle */
+  padding: 10px; /* Adjust padding as needed */
+  border: 1px solid #ddd; 
+}

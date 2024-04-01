@@ -1,0 +1,107 @@
+<div class="container">
+  <mat-toolbar class="mat-elevation-z8">
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    <div class="title" style="font-family: poppins">
+      Project Allocation And Management
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="home"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Home</span>
+      </button>
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="group"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>group</span>
+      </button>
+
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="joinGroup"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Join Group</span>
+      </button>
+
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="project"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Project</span>
+      </button>
+
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="projectChoice"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Project Choice</span>
+      </button>
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="removeMember"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Remove Member</span>
+      </button>
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="sendRequest"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Send Request</span>
+      </button>
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="facultyChoice"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Faculty Choice</span>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button" (click)="logoutClick()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <ngx-ui-loader fgsColor="#F9D88B" pbColor="#F9D88B"></ngx-ui-loader>
+      <div class="content mat-elevation-z8">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

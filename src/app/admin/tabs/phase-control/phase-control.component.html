@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="block-1">
+    <div
+      class="item"
+      *ngFor="let p of allPhases; let i = index"
+      (click)="phaseClick(i)"
+      [ngClass]="{
+        'active-phase': phase.id === i + 1,
+        '': phase.id !== i + 1
+      }"
+    >
+      <div class="item-1">
+        <div class="phase">Phase {{ i + 1 }}</div>
+        <div class="phase-name">{{ p.phaseName }}</div>
+        <div class="duration">Expected Duration 1 Week</div>
+      </div>
+      <div class="item-2">
+        <div class="label" [ngClass]="{ 'open-active': p.open, open: !p.open }">
+          Open
+        </div>
+        <div
+          class="label"
+          [ngClass]="{ 'close-active': !p.open, close: p.open }"
+        >
+          Close
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="block-2">
+    <div class="header">
+      <div class="text">
+        <p>Phase Control</p>
+        <div class="line"></div>
+      </div>
+      <div class="current-phase">
+        <p>{{ phase.phaseName }}</p>
+      </div>
+    </div>
+
+    <input
+      type="datetime-local"
+      class="field"
+      placeholder="start"
+      [(ngModel)]="phase.start"
+      [disabled]="phase.open"
+      [ngClass]="{ blur: phase.open }"
+    />
+    <input
+      type="datetime-local"
+      class="field"
+      placeholder="end"
+      [(ngModel)]="phase.end"
+      [disabled]="phase.open"
+      [ngClass]="{ blur: phase.open }"
+    />
+    <button
+      class="btn1"
+      [disabled]="phase.open"
+      [ngClass]="{ blur: phase.open }"
+      (click)="openClick()"
+    >
+      Open
+    </button>
+    <button
+      class="btn2"
+      [disabled]="!phase.open"
+      [ngClass]="{ blur: !phase.open }"
+      (click)="closeClick()"
+    >
+      Close
+    </button>
+  </div>
+</div>

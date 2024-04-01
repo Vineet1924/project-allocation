@@ -1,0 +1,118 @@
+<div class="main-container">
+  <div class="container">
+    <form [formGroup]="facultyForm">
+      <div class="table-inputs">
+        <div
+          class="field"
+          [ngClass]="{
+            highlight:
+              facultyForm.get('name').invalid && facultyForm.get('name').touched
+          }"
+        >
+          <input
+            autocomplete="off"
+            name="name"
+            id="name"
+            class="input"
+            type="text"
+            placeholder="Name"
+            formControlName="name"
+          />
+        </div>
+        <div
+          class="field"
+          [ngClass]="{
+            highlight:
+              facultyForm.get('experience').invalid &&
+              facultyForm.get('experience').touched
+          }"
+        >
+          <input
+            autocomplete="off"
+            name="experience"
+            id="experience"
+            class="input"
+            type="number"
+            placeholder="Experience"
+            formControlName="experience"
+          />
+        </div>
+        <div
+          class="field"
+          [ngClass]="{
+            highlight:
+              facultyForm.get('phone').invalid &&
+              facultyForm.get('phone').touched
+          }"
+        >
+          <input
+            autocomplete="off"
+            name="phone"
+            id="phone"
+            class="input"
+            type="text"
+            placeholder="Phone"
+            formControlName="phone"
+          />
+        </div>
+        <div
+          class="field"
+          [ngClass]="{
+            highlight:
+              facultyForm.get('email').invalid &&
+              facultyForm.get('email').touched
+          }"
+        >
+          <input
+            autocomplete="off"
+            name="email"
+            id="email"
+            class="input"
+            type="text"
+            placeholder="Email"
+            formControlName="email"
+          />
+        </div>
+        <div
+          class="field"
+          [ngClass]="{
+            highlight:
+              facultyForm.get('password').invalid &&
+              facultyForm.get('password').touched
+          }"
+        >
+          <input
+            autocomplete="off"
+            name="password"
+            id="password"
+            class="input"
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+        </div>
+        <div
+          class="field"
+          [ngClass]="{
+            highlight:
+              facultyForm.get('confirmPassword').invalid &&
+              facultyForm.get('confirmPassword').touched
+          }"
+        >
+          <input
+            autocomplete="off"
+            name="confirmPassword"
+            id="confirmPassword"
+            class="input"
+            type="password"
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
+          />
+        </div>
+        <button (click)="saveData()">
+          <span>Submit</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,192 @@
+.container{
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.block-1{
+  background-color: #1E1D25;
+  display: grid;
+  height: 95%;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1 1fr;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.item{
+  background-color: #21252F;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 10px;
+}
+
+.block-2{
+  background-color: #1E1D25;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 95%;
+}
+.text
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+  text-align: center;
+  align-items: start;
+  
+}
+p{
+  font-family: poppins;
+  font-size: medium;
+  color: white;
+  font-weight: 100;
+  margin-left: 5px;
+  margin: 0px;
+}
+.line{
+  height: 4px;
+  width: 70px;
+  background-color: #F9D88B;
+  border-radius: 10px;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+input{
+  width: 100%;
+  height: 40px;
+
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.current-phase{
+  border:1px solid #F9D88B;
+  height: 30px;
+  width: 60%;
+  padding: 10px;
+  margin-left:10px ;
+  border-radius: 10px;
+}
+
+button{
+  cursor: pointer;
+}
+.btn1 {
+  font-family: poppins;
+  background-color: #4CAF50;
+  box-shadow: 0 0 0 5px #1E1D25;
+  color: #FFF;
+  border: none;
+  border-radius: 8px;
+  height: 45px;
+  transition: .3s;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+
+
+.btn2 {
+  font-family: poppins;
+  background-color: #B43F3F;
+  box-shadow: 0 0 0 5px #1E1D25;
+  color: #FFF;
+  border: none;
+  border-radius: 8px;
+  height: 45px;
+  transition: .3s;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+
+.item-1{
+  display: flex;
+  flex-direction: column;
+  font-family: poppins;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+}
+
+.phase, .duration{
+  font-size: small;
+  font-weight: lighter;
+}
+
+
+.phase-name{
+  font-weight: bold;
+  font-size: 30px;
+  color: #F9D88B;
+}
+
+.item:hover{
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.item-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+.label{
+  border-radius: 10px;
+  padding-inline: 20px;
+  margin-top: 5px;
+  margin-right: 5px;
+  text-align: center;
+  width: fit-content;
+  padding-block: 10px;
+  font-family: poppins;
+  font-size: medium;
+}
+.open{
+  border: 1px solid #4CAF50;
+  color: #4CAF50;
+  opacity: 0.5;
+}
+
+.close{
+  border: 1px solid #B43F3F;
+  color: #B43F3F;
+  opacity: 0.5;
+}
+.close-active{
+  color: white;
+  background-color: #B43F3F;
+  font-weight: 400;
+}
+
+.open-active{
+  color: white;
+  background-color: #4CAF50;
+  font-weight: 400;
+}
+
+.active-phase{
+  border: 1px solid #F9D88B;
+}
+
+.blur{
+  opacity: 0.4;
+  cursor: default;
+}

@@ -1,0 +1,47 @@
+<app-error-message [Message]="Message"></app-error-message>
+<div class="main-container">
+    <div class="search-container" style="margin: 6px;">
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search for a requests..." (input)="searchRequests($event)" />
+          <span class="search-icon">
+            <mat-icon>search</mat-icon>
+          </span>
+        </div>
+      </div>
+    <div class="table" style="margin: 8px;">
+        <div class="table-data" >
+          <table mat-table [dataSource]="filterRequest" class="mat-elevation-z8 demo-table">
+            <ng-container matColumnDef="no">
+              <th mat-header-cell *matHeaderCellDef>No.</th>
+              <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="rollNumber">
+              <th mat-header-cell *matHeaderCellDef>Roll No</th>
+              <td mat-cell *matCellDef="let element">{{element.student.rollNumber}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">{{element.student.name}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="cpi">
+                <th mat-header-cell *matHeaderCellDef>cpi</th>
+                <td mat-cell *matCellDef="let element">{{element.student.resultList[element.student.resultList.length - 1].cpi}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-flat-button color="primary" (click)="onAccept(element)">Accept</button>
+                    <button mat-button color="warn" style="margin-left: 8px;" (click)="onReject(element)">Reject</button>
+                </td>
+              </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+    </div>
+</div>

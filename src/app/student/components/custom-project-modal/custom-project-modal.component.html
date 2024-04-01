@@ -1,0 +1,20 @@
+<app-success-message [Message]="Message"></app-success-message>
+<div class="main-container">
+    <div class="upper">
+      <h2>Custom Project</h2>
+      <h5 id="error-message1" *ngIf="titleRequired == undefined"> Enter project title* </h5>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Project title..." [(ngModel)]="titleRequired"/>
+        <span class="search-icon">
+          <mat-icon>edit</mat-icon>
+        </span>
+      </div>
+      <h5 id="error-message" *ngIf="descRequired == undefined"> Enter project description* </h5>
+      <div>
+        <textarea rows=6 placeholder="Description..."  [(ngModel)]="descRequired"></textarea>
+      </div>
+    </div>
+    <div mat-dialog-actions class="actions">
+      <button class="create" (click)="onSave()"> Save </button>
+    </div>
+</div>

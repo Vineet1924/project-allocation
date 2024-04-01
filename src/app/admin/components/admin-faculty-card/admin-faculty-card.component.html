@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="id">{{ index + 1 }}</div>
+    <div class="name">{{ faculty.name }}</div>
+  </div>
+  <button (click)="remove(faculty, index)">
+    <span>Remove</span>
+  </button>
+</div>

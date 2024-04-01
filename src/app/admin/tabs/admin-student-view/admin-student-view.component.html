@@ -1,0 +1,242 @@
+<div class="container">
+  <div class="grid-view">
+    <div class="item item-1">
+      <img
+        class="image"
+        src="../../../../assets/casual-life-3d-young-man-and-woman-looking-at-tablet.png"
+      />
+    </div>
+    <div class="item item-2">
+      <div class="student-content">
+        <div class="row r1">
+          <div class="label">Student ID</div>
+          <div class="content">{{ student.id }}</div>
+        </div>
+        <div class="row r2">
+          <div class="label">Name</div>
+          <div class="content">{{ student.name }}</div>
+        </div>
+        <div class="row r3">
+          <div class="label">Phone</div>
+          <div class="content">+91 {{ formatPhoneNumber(student.phone) }}</div>
+        </div>
+        <div class="row r4">
+          <div class="label">Admission In</div>
+          <div class="content">{{ student.year | date : "yyyy" }}</div>
+        </div>
+        <div class="row r5">
+          <div class="label">Email</div>
+          <div class="content">{{ student.user.email }}</div>
+        </div>
+        <div class="row r6">
+          <div class="label">Roll Number</div>
+          <div class="content">{{ student.rollNumber }}</div>
+        </div>
+        <div class="row r7">
+          <div class="label">Alumna</div>
+          <div class="content">No</div>
+        </div>
+        <div class="row r8">
+          <div class="label">Password</div>
+          <div class="content">{{ student.user.password }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="item item-3">
+      <div class="result-block">
+        <p>
+          Sem 1
+          <img
+            (click)="openDialog(1)"
+            class="edit-icon sem1"
+            width="15"
+            height="15"
+            src="https://img.icons8.com/pastel-glyph/64/FFFFFF/create-new--v1.png"
+            alt="create-new--v1"
+          />
+        </p>
+
+        <div class="res spi">SPI</div>
+        <div class="res spiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 1">
+              {{ result.spi }}
+            </div>
+          </div>
+        </div>
+        <div class="res cpi">CPI</div>
+        <div class="res cpiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 1">
+              {{ result.cpi }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item item-4">
+      <div class="result-block">
+        <p>
+          Sem 2
+          <img
+            (click)="openDialog(2)"
+            class="edit-icon sem2"
+            width="15"
+            height="15"
+            src="https://img.icons8.com/pastel-glyph/64/FFFFFF/create-new--v1.png"
+            alt="create-new--v1"
+          />
+        </p>
+
+        <div class="res spi">SPI</div>
+        <div class="res spiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 2">
+              {{ result.spi }}
+            </div>
+          </div>
+        </div>
+        <div class="res cpi">CPI</div>
+        <div class="res cpiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 2">
+              {{ result.cpi }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item item-5">
+      <div class="result-block">
+        <p>
+          Sem 3
+          <img
+            (click)="openDialog(3)"
+            class="edit-icon sem3"
+            width="15"
+            height="15"
+            src="https://img.icons8.com/pastel-glyph/64/FFFFFF/create-new--v1.png"
+            alt="create-new--v1"
+          />
+        </p>
+
+        <div class="res spi">SPI</div>
+        <div class="res spiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 3">
+              {{ result.spi }}
+            </div>
+          </div>
+        </div>
+        <div class="res cpi">CPI</div>
+        <div class="res cpiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 3">
+              {{ result.cpi }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item item-6">
+      <div class="result-block">
+        <p>
+          Sem 4
+          <img
+            (click)="openDialog(4)"
+            class="edit-icon sem4"
+            width="15"
+            height="15"
+            src="https://img.icons8.com/pastel-glyph/64/FFFFFF/create-new--v1.png"
+            alt="create-new--v1"
+          />
+        </p>
+
+        <div class="res spi">SPI</div>
+        <div class="res spiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 4">
+              {{ result.spi }}
+            </div>
+          </div>
+        </div>
+        <div class="res cpi">CPI</div>
+        <div class="res cpiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 4">
+              {{ result.cpi }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item item-7">
+      <div class="result-block">
+        <p>
+          Sem 5
+          <img
+            (click)="openDialog(5)"
+            class="edit-icon sem5"
+            width="15"
+            height="15"
+            src="https://img.icons8.com/pastel-glyph/64/FFFFFF/create-new--v1.png"
+            alt="create-new--v1"
+          />
+        </p>
+
+        <div class="res spi">SPI</div>
+        <div class="res spiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 5">
+              {{ result.spi }}
+            </div>
+          </div>
+        </div>
+        <div class="res cpi">CPI</div>
+        <div class="res cpiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 5">
+              {{ result.cpi }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item item-8">
+      <div class="result-block">
+        <p>
+          Sem 6
+          <img
+            (click)="openDialog(6)"
+            class="edit-icon sem6"
+            width="15"
+            height="15"
+            src="https://img.icons8.com/pastel-glyph/64/FFFFFF/create-new--v1.png"
+            alt="create-new--v1"
+          />
+        </p>
+
+        <div class="res spi">SPI</div>
+        <div class="res spiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 6">
+              {{ result.spi }}
+            </div>
+          </div>
+        </div>
+        <div class="res cpi">CPI</div>
+        <div class="res cpiscore">
+          <div *ngFor="let result of student.resultList">
+            <div *ngIf="result.semNo === 6">
+              {{ result.cpi }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item item-9"></div>
+    <div class="item item-10" (click)="sendDataToParent()">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </div>
+  </div>
+</div>

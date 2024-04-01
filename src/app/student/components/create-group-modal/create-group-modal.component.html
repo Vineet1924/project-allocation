@@ -1,0 +1,19 @@
+<div class="main-container">
+    <div mat-dialog-title id="title">Create Group <br>
+    <h3>
+      Start collaborating effortlessly! Name your group, invite members, and forge connections with ease.
+    </h3>
+    <h5 id="error-message" *ngIf="customErrorMessage != undefined"> Enter Group Name* </h5>
+  </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Group name..." [(ngModel)]="groupName"/>
+      <span class="search-icon">
+        <mat-icon>group</mat-icon>
+      </span>
+    </div>
+    <div mat-dialog-actions class="actions">
+      <button mat-flat-button color="warn" mat-dialog-close class="cancel">close</button>
+      <button class="create" (click)="onCreate()"> create </button>
+    </div>
+  </div>
+  

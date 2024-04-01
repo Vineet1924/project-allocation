@@ -1,0 +1,273 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: var(--custom-primary);
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../../assets/Gradient.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-container {
+  width: 70%;
+  height: 75%;
+  background-color: #1e1d25;
+  border-radius: 12px;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  top: 70px;
+  left: 600px;
+}
+
+app-lottie-animation {
+  width: 10000px;
+  height: 10000px;
+}
+
+.logo-container {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 35px;
+  left: 35px;
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-container {
+  position: absolute;
+  top: 115px;
+  left: 38px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-family: inter;
+  font-size: 18px;
+}
+
+.text-container p {
+  margin: 5px 3px;
+  font-family: inter;
+}
+
+.text-container p {
+  color: #7f8497;
+}
+
+p a {
+  color: #dfb46a;
+  text-decoration: none;
+}
+
+.divider-container {
+  position: absolute;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  top: 165px;
+  left: 40px;
+}
+
+.divider-container hr {
+  flex: 1;
+  border: 0;
+  height: 1px;
+  margin-bottom: 12px;
+  background-color: #282834;
+}
+
+.divider-container p {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.or-text {
+  margin: 30px;
+  color: #7f8497;
+  font-family: inter;
+  font-size: 16px;
+}
+
+.login-form {
+  position: absolute;
+  top: 190px;
+  left: 20px;
+  width: 49%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.forgot-password a {
+  position: absolute;
+  top: 415px;
+  left: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-family: inter;
+  font-size: 18px;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 50%;
+  max-width: 700px;
+  position: absolute;
+  top: 418px;
+  left: 59%;
+  transform: translate(-50%, -50%);
+}
+
+.error {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 320px;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  background: #ef665b;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px -3px #111;
+  position: fixed;
+  top: 20px;
+  right: 10px;
+}
+
+.error__icon {
+  width: 20px;
+  height: 20px;
+  transform: translateY(-2px);
+  margin-right: 8px;
+}
+
+.error__icon path {
+  fill: #fff;
+}
+
+.error__title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+}
+
+.error__close {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.error__close path {
+  fill: #fff;
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+  .image-container {
+    display: none;
+  }
+
+  .logo-container {
+    left: 45%;
+  }
+
+  .text-container {
+    left: 28%;
+    font-size: 1.8vw;
+  }
+
+  .divider-container {
+    left: 12%;
+    width: 78%;
+  }
+
+  .or-text {
+    font-size: 2.1vw;
+  }
+
+  .login-form {
+    left: 8%;
+    width: 85%;
+  }
+
+  .login-button {
+    width: 85%;
+    left: 107%;
+  }
+
+  .login-button app-custom-button {
+    font-size: 1vw;
+  }
+  .forgot-password a {
+    left: 12%;
+    font-size: 1.6vw;
+  }
+}
+
+mat-progress-bar {
+  position: fixed;
+  top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .sub-container {
+    overflow: hidden;
+    top: 10%;
+    width: 87%;
+    position: absolute;
+    height: 80vh;
+    bottom: 0;
+  }
+
+  .login-form {
+    width: 90%;
+    left: 5%;
+  }
+
+  .text-container {
+    position: absolute;
+    font-size: 2.8vw;
+    left: 25%;
+  }
+
+  .forgot-password a {
+    left: 12%;
+    font-size: 3vw;
+  }
+
+  .login-button {
+    width: 100%;
+    top: 430px;
+    left: 110%;
+  }
+}

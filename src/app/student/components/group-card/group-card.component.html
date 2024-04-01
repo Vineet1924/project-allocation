@@ -1,0 +1,23 @@
+<app-success-message [Message]="successMessage"></app-success-message>
+<app-error-message [Message]="errorMessage"> </app-error-message>
+  <div class="container">
+    <div class="title">
+      <h2>{{ group.groupName }}</h2>
+    </div>
+    <div class="content">
+      <ng-container *ngFor="let student of studentList">
+        <div class="row">
+          <div class="image">
+            <img src="../../../../assets/profile-student.png" alt="Loading..." />
+          </div>
+          <div class="name">
+            <h3>{{ student.name }}</h3>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="action">
+      <button (click)="sendRequest()">Request</button>
+    </div>
+  </div>
+  

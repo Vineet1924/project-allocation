@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="item item1">
+    <button
+      *ngIf="!edit; else submitTemplate"
+      (click)="click()"
+      style="margin-bottom: 5px"
+    >
+      Edit
+    </button>
+    <ng-template #submitTemplate>
+      <button *ngIf="edit" (click)="click()">Save</button>
+    </ng-template>
+    <div class="label">Name</div>
+    <div class="input">
+      <input type="text" [readOnly]="!edit" [(ngModel)]="faculty.name" />
+    </div>
+    <div class="label">Phone</div>
+    <div class="input">
+      <input type="text" [readOnly]="!edit" [(ngModel)]="faculty.phone" />
+    </div>
+    <div class="label">EMail</div>
+    <div class="input">
+      <input type="text" [readOnly]="!edit" [(ngModel)]="faculty.user.email" />
+    </div>
+    <div class="label">Interest</div>
+    <div class="interest-tab">
+      <div class="tag-container">
+        <div
+          class="tag"
+          *ngFor="let item of faculty.domainSet"
+          style="background-color: #1e1d25; margin: 5px"
+        >
+          <div class="tag-label">{{ item.name }}</div>
+          <div class="remove-btn">
+            <i class="material-icons">close</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="item item2">
+    <div class="t">Interest</div>
+    <div class="add-input">
+      <input
+        type="text"
+        placeholder="Other Interest"
+        [(ngModel)]="otherInterest"
+      />
+      <button class="add" (click)="addClick()">ADD</button>
+    </div>
+    <div class="tag-container">
+      <div class="tag" *ngFor="let item of allDomains">
+        <div class="tag-label">{{ item.name }}</div>
+        <div class="remove-btn" (click)="mapClicked(item.id)">
+          <i class="material-icons">add</i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

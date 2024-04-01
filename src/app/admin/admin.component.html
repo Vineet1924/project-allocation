@@ -1,0 +1,80 @@
+<div class="container">
+  <mat-toolbar class="mat-elevation-z8">
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    <div class="title" style="font-family: poppins">
+      Project Allocation And Management
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="home"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Home</span>
+      </button>
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="addUsers"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Add Users</span>
+      </button>
+
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="manageFaculties"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Manage</span>
+      </button>
+
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="phaseControl"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Phase Control</span>
+      </button>
+
+      <button
+        mat-button
+        class="menu-button"
+        routerLink="communication"
+        routerLinkActive="active"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <span>Communication</span>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button" (click)="logoutClick()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <ngx-ui-loader fgsColor="#F9D88B" pbColor="#F9D88B"></ngx-ui-loader>
+      <div class="content mat-elevation-z8">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

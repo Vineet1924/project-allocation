@@ -1,0 +1,33 @@
+<div class="container-2">
+  <div class="tabs">
+    <div
+      class="tab"
+      [ngClass]="{
+        active: selectedTab === 'tab1'
+      }"
+      (click)="selectTab('tab1')"
+    >
+      <div class="tab-c">
+        <div class="tab-title">Add Student</div>
+        <div [ngClass]="{ line: selectedTab === 'tab1' }"></div>
+      </div>
+    </div>
+    <div
+      class="tab"
+      [ngClass]="{ active: selectedTab === 'tab2' }"
+      (click)="selectTab('tab2')"
+    >
+      <div class="tab-c">
+        <div class="tab-title">Add Faculty</div>
+        <div [ngClass]="{ line: selectedTab === 'tab2' }"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" *ngIf="selectedTab === 'tab1'">
+    <app-add-students></app-add-students>
+  </div>
+  <div class="tab-content" *ngIf="selectedTab === 'tab2'">
+    <app-add-faculties></app-add-faculties>
+  </div>
+</div>

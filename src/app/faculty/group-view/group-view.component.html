@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="first-col">
+    <mat-calendar (selectedChange)="onDateSelected($event)"></mat-calendar>
+    <div class="task-analytics">
+      <div class="total">
+        <div class="heading">Total Tasks</div>
+        <div class="numbers">{{ totalTask }}</div>
+      </div>
+      <div class="total">
+        <div class="heading">Completed Task</div>
+        <div class="numbers">{{ completedTask }}</div>
+      </div>
+      <div class="total">
+        <div class="heading">Pending Task</div>
+        <div class="numbers">{{ pendingTask }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="second-col">
+    <div class="add-task">
+      <div class="item">
+        <div class="label">Date</div>
+        <div class="date">{{ task.assignedDate }}</div>
+      </div>
+      <div class="item">
+        <div class="label">Task</div>
+        <input type="text" [(ngModel)]="task.taskName" />
+      </div>
+      <div class="item">
+        <button (click)="addTask()">Add Task</button>
+      </div>
+    </div>
+    <div class="tasks">
+      <div class="head">
+        Tasks assigned on
+        <span *ngIf="task.assignedDate != ''">{{ task.assignedDate }}</span>
+        <button style="margin-left: 10px" (click)="allClick()">All</button>
+      </div>
+      <div *ngFor="let t of allTaskList; let i = index">
+        <div
+          class="task-row"
+          *ngIf="
+            compareDates(t.assignedDate, task.assignedDate) ||
+            task.assignedDate == ''
+          "
+        >
+          <div class="task-text">
+            {{ t.taskName }}
+          </div>
+          <div class="tast-check">
+            <div class="checkbox-wrapper">
+              <input
+                id="checkbox-{{ i }}"
+                type="checkbox"
+                [checked]="t.status === true"
+                (change)="checkBoxClicked($event, i)"
+              />
+              <label class="check-box" [for]="'checkbox-' + i"> </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

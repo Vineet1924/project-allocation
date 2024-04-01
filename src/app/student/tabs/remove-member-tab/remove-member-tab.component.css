@@ -1,0 +1,39 @@
+.table-data {
+    width: 100%;
+    height: 50%;
+    color: #7f8497;
+    font-family: poppins;
+    box-shadow: none;
+    background-color: #1e1d25;
+    overflow-y: scroll;
+    border-radius: 6px;
+    position: relative;
+    top: 8px;
+  }
+  
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+    color: #7f8497;
+  }
+  
+  th {
+    color: #7f8497;
+    font-family: poppins;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: #f9d88b;
+    color: #f9d88b;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+  
+  table {
+    box-shadow: none;
+    background-color: #1e1d25;
+  }
+  

@@ -1,0 +1,17 @@
+<div class="container">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th colspan="3" style="margin: 5px"><hr /></th>
+    </tr>
+    <tr *ngFor="let f of faculties; let i = index">
+      <td>{{ i }}</td>
+      <td>{{ f.name }}</td>
+      <td><button class="comic-button" (click)="click(f, i)">Add</button></td>
+    </tr>
+  </table>
+</div>

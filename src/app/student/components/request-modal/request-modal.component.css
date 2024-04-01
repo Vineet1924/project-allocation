@@ -1,0 +1,46 @@
+.main-container {
+    width: 100%;
+    height: 100%;
+    background-color: #1e1d25;
+  }
+  
+  h4 {
+    color: #dfb46a;
+    font-family: poppins;
+    display: block;
+    text-align: center;
+  }
+
+  .search-bar {
+    width: 400px;
+    height: 50px;
+    position: relative;
+    float: right;
+    background-color: #1e1d25;
+    border-radius: 5px;
+  }
+  
+  #searchInput {
+    border-radius: 5px;
+    height: 100%;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7f8497;
+  }
+
+  .search-container {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 4px;
+    position: relative;
+    top: 12px;
+  }

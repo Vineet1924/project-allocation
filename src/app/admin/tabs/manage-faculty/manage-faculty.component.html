@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="item item1">
+    <div class="row">
+      <div class="p" style="font-size: medium">
+        Available Faculties In Year {{ year }}
+      </div>
+      <button (click)="addFaculties()" style="height: 40px">
+        <span>Add</span>
+      </button>
+    </div>
+    <div class="faculty-details">
+      <div
+        *ngIf="availableFaculties.length == 0; else notLoggedIn"
+        class="noDataAvailable"
+      >
+        No Data Available
+      </div>
+      <ng-template #notLoggedIn>
+        <app-admin-faculty-card
+          *ngFor="let f of availableFaculties; let i = index"
+          [faculty]="f"
+          [index]="i"
+          (facultyRemoveEmitter)="removeFromAvailable($event)"
+        ></app-admin-faculty-card>
+      </ng-template>
+    </div>
+  </div>
+  <div class="item item2">
+    <div class="header">
+      <div class="name">Work Load</div>
+      <button (click)="workloadClick()">
+        <span>Save</span>
+      </button>
+    </div>
+    <div class="container">
+      <div class="field" *ngFor="let f of availableFaculties">
+        <div class="name-field">
+          <p style="font-size: medium">{{ f.name }}</p>
+          <div class="av-label">
+            <div class="round"></div>
+            available
+          </div>
+        </div>
+        <input type="number" class="field-in" [(ngModel)]="f.workLoad" />
+      </div>
+    </div>
+  </div>
+
+  <div class="item item3"></div>
+</div>

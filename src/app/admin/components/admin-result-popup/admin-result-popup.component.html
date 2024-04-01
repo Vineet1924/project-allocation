@@ -1,0 +1,16 @@
+<div class="card">
+  <h2>Semester {{ data.semNo }}</h2>
+  <input
+    type="number"
+    placeholder="SPI"
+    class="input"
+    [(ngModel)]="result.spi"
+  />
+  <input
+    type="number"
+    placeholder="CPI"
+    class="input"
+    [(ngModel)]="result.cpi"
+  />
+  <button (click)="handleClick(data.semNo)" class="comic-button">Submit</button>
+</div>

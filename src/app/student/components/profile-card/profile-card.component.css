@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+  }
+  
+  img {
+    width: 170px;
+    height: 170px;
+  }
+  
+  h1 {
+    letter-spacing: 2px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: hsl(42, 90%, 76%);
+    font-family: poppins;
+  }
+  
+  h4 {
+    position: relative;
+    bottom: 10px;
+    color: #7f8497;
+    font-family: poppins;
+  }
+  

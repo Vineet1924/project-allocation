@@ -1,0 +1,83 @@
+.container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+}
+.row{
+  width: 100%;
+  height: 38px;
+  display: flex;
+  background-color: #5c5a692a;
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.id{
+  font-family: poppins;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.name{
+  font-family: poppins;
+  color: white;
+
+}
+
+
+.row:hover{
+  cursor: pointer;
+  color: white;
+  background-color: #5c5a69;
+  border: 1px solid #25242b;
+}
+
+
+
+button {
+  border-radius: 10px;
+  background-color: #25242b;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-size: 10px;
+  width: 100px;
+  height: 38px;
+  transition: all 0.5s;
+  cursor: pointer;
+  height: 40px;
+  font-family: poppins;
+  font-weight: 800;
+  margin: 5px;  
+
+ }
+ 
+ button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+ }
+ 
+ button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+ }
+ 
+ button:hover span {
+  padding-right: 15px;
+ }
+ 
+ button:hover span:after {
+  opacity: 1;
+  right: 0;
+ }

@@ -1,0 +1,15 @@
+<app-error-message [Message]="Message"></app-error-message>
+  <div class="container">
+    <div class="image">
+      <img src="../../../assets/profile-student.png" alt="loading">
+    </div>
+    <div class="data">
+        <h4>{{ id }}</h4>
+        <h4>{{ group_name }}</h4>
+    </div>
+    <div class="operation">
+      <button class="accept" (click)="onAccept()">Accept</button>
+      <button mat-button color="warn" class="reject" (click)="onReject()">Reject</button>
+    </div>
+  </div>
+  

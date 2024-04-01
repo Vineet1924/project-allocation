@@ -1,0 +1,120 @@
+app-success-message {
+    position: fixed;
+    top: 10px;
+    right: 30px;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    width: 97%;
+    height: 130%;
+    background-color: #1e1d25;
+    padding: 6px;
+    overflow: hidden;
+  }
+  
+  .search-bar {
+    position: relative;
+    width: 345px;
+    height: 50px;
+    left: 27px;
+    position: relative;
+    background-color: #1e1d25;
+    border-radius: 5px;
+  }
+  
+  #searchInput {
+    border-radius: 5px;
+    height: 100%;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7f8497;
+  }
+  
+  .create {
+    margin: 4px;
+    padding: 4px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    width: 100px;
+    top: 10px;
+    position: absolute;
+    right: 20px;
+    letter-spacing: 1px;
+    background-color: #22bb33;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .cancel {
+    margin: 4px;
+    padding: 4px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    width: 100px;
+    top: 10px;
+    position: absolute;
+    right: 135px;
+  }
+  
+  textarea {
+    width: 338px;
+    margin-top: 18px;
+    position: relative;
+    left: 27px;
+    background-color: #282834;
+    border-radius: 6px;
+    color: #7f8497;
+    font-family: poppins;
+    font-size: 14px;
+    border: none;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  
+  h2 {
+    color: #7f8497;
+    position: relative;
+    left: 27px;
+  }
+  
+  .upper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .actions {
+    position: relative;
+    left: 5px;
+  }
+  
+  #error-message1 {
+    color: #ef665b;
+    position: absolute;
+    top: 27px;
+    left: 30px;
+  }
+  
+  #error-message {
+    color: #ef665b;
+    position: absolute;
+    top: 97px;
+    left: 30px;
+  }
+  

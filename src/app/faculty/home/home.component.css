@@ -1,0 +1,134 @@
+.container{
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+
+.item1{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(10,50px);
+  background-color: #1E1D25;
+  border-radius: 10px;
+  padding: 10px;
+}
+.item2{
+  grid-column-start: 2;
+  grid-column-end: 3; 
+  background-color: #1E1D25;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.label{
+  font-family: poppins;
+  font-weight: 400;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 10px;
+}
+input{
+    height: max-content;
+    font-size: medium;
+    padding: 10px;
+    margin: 0px;
+    margin-right: 10px;
+}
+
+button{
+  grid-column-start: 0;
+  grid-column-end: 3;
+  background-color: transparent;
+  border: 1px solid #282834;
+  border-radius: 10px;
+  font-family: poppins;
+  font-weight: normal;
+  color: white;
+  padding-inline:50px;
+  padding-block: 8px;
+}
+
+.add-input{
+  display: flex;
+  flex-direction: row;
+}
+
+button:hover{
+  background-color: #282834;
+  cursor:  pointer;
+}
+
+.t{
+  margin: 0px;
+  font-family: poppins;
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .tag-container {
+    flex-direction: column;
+  }
+}
+
+.tag{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #282834;
+  width: max-content;
+  border-radius: 8px;
+  margin-right: 10px; 
+  margin-bottom: 10px;
+}
+
+.tag-label{
+  font-family: poppins;
+  font-size: small;
+  color: hsl(0, 0%, 100%);
+  margin-inline: 10px;
+}
+.remove-btn{
+  height: 100%;
+  background-color: #9a9a9a;
+  color: #1E1D25;
+  border-radius: 0px 8px 8px 0px;
+}
+.material-icons{
+  font-size: 20px; 
+}
+
+.remove-btn:hover{
+  cursor: pointer;
+  background-color: #4a4a4b;
+  color: #FFF;
+}
+
+.interest-tab{
+  background-color: #282834;
+  border-radius: 8px;
+  margin-top: 2px;
+  grid-row-start: 5;
+  grid-row-end: 12;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}

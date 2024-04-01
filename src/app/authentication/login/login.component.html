@@ -1,0 +1,39 @@
+<div class="container">
+  <div #lottieAnimation></div>
+  <app-error-message
+    *ngIf="customErrorMessage"
+    [Message]="customErrorMessage"
+  ></app-error-message>
+  <div id="animation-container" class="animation-container"></div>
+  <div class="sub-container" id="subContainer">
+    <div class="image-container">
+      <img
+        src="../../../assets/casual-life-3d-girl-chatting-remotely-with-group-of-three-people.png"
+        alt=""
+      />
+    </div>
+
+    <div class="logo-container">
+      <img src="../../../assets/logo.svg" alt="Loading.." />
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+      <div class="login-form">
+        <input placeholder="Email" formControlName="email" />
+        <input placeholder="Password" formControlName="password" />
+      </div>
+
+      <div class="forgot-password">
+        <p><a href="#">Forgot password?</a></p>
+      </div>
+
+      <div class="login-button">
+        <app-custom-button
+          [buttonText]="'Login'"
+          [type]="'submit'"
+          [imageUrl]="'../assets/Vector.png'"
+        ></app-custom-button>
+      </div>
+    </form>
+  </div>
+</div>

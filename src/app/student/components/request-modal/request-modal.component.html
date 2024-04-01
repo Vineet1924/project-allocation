@@ -1,0 +1,7 @@
+<div class="main-container">
+    <h4 *ngIf="request.length == 0">No Request Available</h4>
+    <div *ngFor="let item of request">
+      <app-request-card [requestData]="item" (closeModal)="handleCloseModal($event)" [student]="Student"></app-request-card>
+    </div>
+  </div>
+  

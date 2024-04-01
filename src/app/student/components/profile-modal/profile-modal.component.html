@@ -1,0 +1,15 @@
+<div class="profile-modal-container">
+    <app-profile-card [name]="studentName"></app-profile-card>
+    <div class="profile-data">
+      <app-profile-tile [title]="'Student id'" [value]="studentId"></app-profile-tile>
+      <app-profile-tile [title]="'Full Name'" [value]="studentName"></app-profile-tile>
+      <app-profile-tile [title]="'Email'" [value]="email"></app-profile-tile>
+      <app-profile-tile [title]="'Phone'" [value]="phoneNo"></app-profile-tile>
+      <app-profile-tile [title]="'Semester'" [value]="semester"></app-profile-tile>
+      <app-profile-tile [title]="'Cpi'" [value]="cpi"></app-profile-tile>
+    </div>
+    <mat-dialog-actions>
+      <button mat-flat-button color="warn" mat-dialog-close>close</button>
+    </mat-dialog-actions>
+  </div>
+  

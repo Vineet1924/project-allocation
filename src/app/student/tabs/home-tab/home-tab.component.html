@@ -1,0 +1,55 @@
+<div class="main-content">
+    <div class="profile">
+      <div class="image-container">
+        <app-profile-card [imageSrc]="profileImage" [name]="student.name" [department]="'Computer'">
+        </app-profile-card>
+      </div>
+      <div class="profile-data">
+        <app-profile-tile [title]="'Student id'" [value]="student.rollNumber"></app-profile-tile>
+        <app-profile-tile [title]="'Full Name'" [value]="student.name"></app-profile-tile>
+        <app-profile-tile [title]="'Email'" [value]="student.user.email"></app-profile-tile>
+        <app-profile-tile [title]="'Phone'" [value]="student.phone"></app-profile-tile>
+        <app-profile-tile [title]="'Semester'" [value]="semester"></app-profile-tile>
+        <app-profile-tile [title]="'Cpi'" [value]="cpi"></app-profile-tile>
+      </div>
+    </div>
+    <div class="table">
+      <div class="decorator">
+  
+      </div>
+      <div class="table-data">
+        <table mat-table [dataSource]="students" class="mat-elevation-z8 demo-table">
+          <ng-container matColumnDef="no">
+            <th mat-header-cell *matHeaderCellDef>No.</th>
+            <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="student_id">
+            <th mat-header-cell *matHeaderCellDef>Student id</th>
+            <td mat-cell *matCellDef="let element">{{element.rollNumber}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let element">{{element.user.email}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="cpi">
+            <th mat-header-cell *matHeaderCellDef>CPI</th>
+            <td mat-cell *matCellDef="let element">{{ element.result_list.length === 0 ? '-' : element.result_list[element.result_list.length - 1].cpi || '-' }}
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row (click)="openModal(row)"
+            *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  

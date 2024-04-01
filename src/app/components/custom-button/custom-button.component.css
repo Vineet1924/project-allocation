@@ -1,0 +1,48 @@
+.custom-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 25%;
+  padding: 15px;
+  background-color: #dfb46a;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  font-family: poppins;
+  font-weight: 700;
+}
+
+.custom-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.custom-button span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 15px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+  .custom-button {
+    font-size: 1.8vw;
+  }
+}

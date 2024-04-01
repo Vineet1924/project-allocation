@@ -1,0 +1,16 @@
+.profile-modal-container {
+    background-color: #1e1d25;
+    color: #7f8497;
+    font-family: poppins;
+    padding: 14px;
+  }
+  
+  mat-dialog-actions {
+    float: right;
+  }
+  
+  .profile-data {
+    width: 98%;
+    height: 270px;
+  }
+  
